@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorful Cool Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff4d4d, #ffbb00, #00eaff, #7d00ff);
+            background-size: 400% 400%;
+            animation: gradientMove 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        
+
+        h1 {
+            margin: 0;
+            font-size: 120px;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0 0 20px #00000080, 0 0 40px #ff00ff;
+        }
+        p {
+            margin: 0;
+            font-size: 20px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: white;
+            color: #333;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main">WHAT UP, BIATCH ?</h1>
+</body>
+</html>
