@@ -1,134 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poyi Irunu Padikada</title>
-  <style>
-    /* Reset + box sizing */
-    *, *::before, *::after { box-sizing: border-box; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorful Cool Page</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-    :root{
-      --bg-gradient: linear-gradient(135deg, #ff4d4d, #ffbb00, #00eaff, #7d00ff);
-      --white: #ffffff;
-      --muted-shadow: rgba(0,0,0,0.5);
-    }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff4d4d, #ffbb00, #00eaff, #7d00ff);
+            background-size: 400% 400%;
+            animation: gradientMove 8s infinite alternate ease-in-out;
+        }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(12px, 3vw, 40px);
-      background: var(--bg-gradient);
-      background-size: 400% 400%;
-      animation: gradientMove 8s infinite alternate ease-in-out;
-    }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
+        h1 {
+            margin: 0;
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0 0 20px #00000080, 0 0 40px #ff00ff;
+        }
 
-    .card {
-      width: 100%;
-      max-width: 1100px;
-      background: rgba(255,255,255,0.03); /* subtle frosted look */
-      padding: clamp(18px, 3.5vw, 48px);
-      border-radius: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(12px, 2.5vw, 28px);
-      text-align: center;
-      box-shadow: 0 10px 30px var(--muted-shadow);
-      backdrop-filter: blur(6px);
-    }
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
 
-    h1.main {
-      margin: 0;
-      /* responsive font size */
-      font-size: clamp(2.2rem, 10vw, 7.5rem);
-      line-height: 0.95;
-      font-weight: 900;
-      letter-spacing: 0.15em;
-      color: var(--white);
-      text-shadow: 0 0 18px rgba(0,0,0,0.45), 0 0 36px #ff00ff66;
-      word-break: break-word;
-    }
+        button {
+            padding: 14px 26px;
+            background: #ffffff;
+            color: #333;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.25s;
+            min-width: 180px;
+        }
 
-    .buttons {
-      display: flex;
-      gap: clamp(8px, 2vw, 18px);
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      max-width: 720px;
-    }
-
-    .btn {
-      -webkit-tap-highlight-color: transparent;
-      padding: clamp(8px, 2vw, 16px) clamp(12px, 4vw, 28px);
-      font-size: clamp(0.9rem, 2.2vw, 1.25rem);
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      transition: transform .18s ease, background .18s ease, color .18s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-width: 160px;
-      text-decoration: none;
-    }
-
-    .btn.secret {
-      background: var(--white);
-      color: #222;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-    }
-    .btn.secret:hover { transform: translateY(-3px) scale(1.02); background: #ffdd66; }
-
-    .btn.introvert {
-      background: rgba(255,255,255,0.12);
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.12);
-      min-width: 180px;
-    }
-    .btn.introvert:hover { transform: translateY(-3px) scale(1.02); background: rgba(255,255,255,0.18); color:#000; }
-
-    /* smaller screens: make buttons full width */
-    @media (max-width: 520px) {
-      .btn { min-width: 100%; padding-left: 14px; padding-right: 14px; }
-      .buttons { gap: 10px; }
-      .card { padding: 20px; border-radius: 12px; }
-    }
-  </style>
+        button:hover {
+            transform: scale(1.1);
+            background: #ffbb00;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-  <div class="card" role="main" aria-labelledby="title">
-    <h1 id="title" class="main">WHAT UP, BIATCH ?</h1>
 
-    <div class="buttons" aria-hidden="false">
-      <button class="btn secret" id="secretBtn" type="button"
-              onclick="window.open('https://youtu.be/24v3C37JLwA?si=RCGn035544DkriNN', '_blank', 'noopener')">
-        Wanna hear a secret ?
-      </button>
+    <!-- AUTO-PLAY MUSIC -->
+    <audio id="bgm" autoplay loop>
+        <source src="/mnt/data/yo_yo_yo_148_3.mp3" type="audio/mpeg">
+    </audio>
 
-      <!-- responsive introvert button -->
-      <button class="btn introvert" id="introvertBtn" type="button"
-              onclick="window.location.href='password.html'">
-        Click here u introvert !
-      </button>
+    <script>
+        const audio = document.getElementById("bgm");
+        audio.volume = 0.7;
+
+        audio.play().catch(() => {
+            // Mobile fallback: play on first tap
+            const startAudio = () => {
+                audio.play();
+                document.body.removeEventListener("click", startAudio);
+            };
+            document.body.addEventListener("click", startAudio, { once: true });
+        });
+    </script>
+
+    <!-- PAGE CONTENT -->
+    <h1>WHAT UP, BIATCH ?</h1>
+
+    <div class="buttons">
+        <button onclick="window.open('https://youtu.be/24v3C37JLwA?si=RCGn035544DkriNN', '_blank')">
+            Wanna hear a secret?
+        </button>
+
+        <button onclick="window.location.href='password.html'">
+            Click here u introvert
+        </button>
     </div>
-  </div>
+
 </body>
 </html>
